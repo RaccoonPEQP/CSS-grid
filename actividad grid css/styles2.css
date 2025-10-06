@@ -1,0 +1,104 @@
+dashboard {
+display: grid;
+grid-template-areas:
+    "header header header"
+    "sidebar main widget"
+    "footer footer footer";
+grid-template-columns: 200px 1fr 250px;
+grid-template-rows: auto 1fr auto;
+min-height: 100vh;
+gap: 20px;
+background-color: #f3f4f6;
+padding: 10px;
+}
+
+.header {
+grid-area: header;
+background: darkgray;
+color: white;
+text-align: center;
+padding: 15px;
+font-size: 1.5rem;
+border-radius: 8px;
+}
+
+.sidebar {
+grid-area: sidebar;
+background: #1e293b;
+color: white;
+padding: 20px;
+border-radius: 8px;
+}
+
+.main-content {
+grid-area: main;
+background: white;
+border-radius: 8px;
+padding: 20px;
+}
+
+.widget-panel {
+grid-area: widget;
+background: #e2e8f0;
+border-radius: 8px;
+padding: 20px;
+}
+
+.footer {
+grid-area: footer;
+background: grey;
+color: white;
+text-align: center;
+padding: 10px;
+border-radius: 8px;
+}
+
+.widgets {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+gap: 15px;
+margin-top: 20px;
+}
+
+.widget {
+background: #f1f5f9;
+border-radius: 8px;
+padding: 20px;
+text-align: center;
+font-weight: bold;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+transition: transform 0.3s ease;
+}
+
+.widget:hover {
+transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+.dashboard {
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+    grid-template-columns: 220px 1fr;
+}
+
+.widget-panel {
+    display: none; 
+}
+}
+
+@media (max-width: 768px) {
+.dashboard {
+    grid-template-areas:
+    "header"
+    "main"
+    "sidebar"
+    "footer";
+    grid-template-columns: 1fr;
+}
+
+.sidebar {
+    order: 2;
+}
+}

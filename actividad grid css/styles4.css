@@ -1,0 +1,164 @@
+body {
+font-family: "Segoe UI", Arial, sans-serif;
+margin: 0;
+background: #f3f4f6;
+color: #1f2937;
+}
+
+a {
+color: #fd6e02;
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+a:hover {
+color: #005fa3;
+}
+
+/* ==== GRID PRINCIPAL ==== */
+.blog-container {
+display: grid;
+grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+grid-template-columns: 2fr 1fr;
+grid-template-rows: auto 1fr auto;
+gap: 20px;
+padding: 20px;
+min-height: 100vh;
+}
+
+/* ==== ÁREAS ==== */
+.header {
+grid-area: header;
+background: #fd6e02;
+color: white;
+padding: 20px;
+border-radius: 8px;
+}
+
+.header h1 {
+margin: 0 0 10px;
+}
+
+.nav a {
+margin-right: 20px;
+color: white;
+font-weight: bold;
+}
+
+.nav a:hover {
+text-decoration: underline;
+color: #dbeafe;
+}
+
+.main {
+grid-area: main;
+background: white;
+border-radius: 8px;
+padding: 20px;
+}
+
+.sidebar {
+grid-area: sidebar;
+background: #e2e8f0;
+border-radius: 8px;
+padding: 20px;
+}
+
+.footer {
+grid-area: footer;
+background: #fd6e02;
+color: white;
+text-align: center;
+padding: 10px;
+border-radius: 8px;
+}
+
+/* ==== ARTÍCULOS ==== */
+.post {
+margin-bottom: 30px;
+border-bottom: 1px solid #e5e7eb;
+padding-bottom: 20px;
+}
+
+.post:last-child {
+border-bottom: none;
+}
+
+.post h2 {
+margin: 0 0 10px;
+color: #d10404;
+}
+
+.date {
+font-size: 0.9rem;
+color: #6b7280;
+margin-bottom: 10px;
+}
+
+.read-more {
+display: inline-block;
+margin-top: 10px;
+font-weight: bold;
+transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.read-more:hover {
+transform: translateX(5px);
+color: #b31313;
+}
+
+/* ==== SIDEBAR ==== */
+.widget {
+margin-bottom: 30px;
+}
+
+.widget h3 {
+color: #b31313;
+border-bottom: 2px solid #6f00ff;
+padding-bottom: 5px;
+margin-bottom: 10px;
+}
+
+.widget ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.widget li {
+margin-bottom: 8px;
+}
+
+/* ==== RESPONSIVE DESIGN ==== */
+
+/* TABLET */
+@media (max-width: 1023px) {
+.blog-container {
+    grid-template-columns: 3fr 1fr;
+}
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+.blog-container {
+    grid-template-areas:
+    "header"
+    "main"
+    "sidebar"
+    "footer";
+    grid-template-columns: 1fr;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nav a {
+    margin-right: 0;
+}
+}
